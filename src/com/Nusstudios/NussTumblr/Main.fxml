@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Nusstudios.NussTumblr.MainController">
+    <children>
+        <Label layoutX="14.0" layoutY="5.0" text="NussTumblr 4">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="48.0" text="Blog / Post URL" />
+        <TextField fx:id="blogurl" layoutX="14.0" layoutY="66.0" prefHeight="26.0" prefWidth="210.0" />
+        <TextField fx:id="outdir" layoutX="55.0" layoutY="116.0" prefHeight="26.0" prefWidth="168.0" />
+        <Label layoutX="16.0" layoutY="98.0" text="Output directory" />
+        <Button fx:id="btnDownload" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#download" prefHeight="27.0" prefWidth="82.0" text="Download" />
+        <Button fx:id="btnPause" disable="true" layoutX="101.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#pause" prefHeight="27.0" prefWidth="56.0" text="Pause" />
+        <Button fx:id="btnCancel" disable="true" layoutX="161.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="27.0" prefWidth="62.0" text="Cancel" />
+        <ProgressBar fx:id="progressbar" layoutX="13.0" layoutY="339.0" prefHeight="20.0" prefWidth="210.0" progress="0.0" />
+        <Button fx:id="btnOutdir" layoutX="16.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#opendir" text="..." />
+        <Label fx:id="status" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="322.0" prefHeight="17.0" prefWidth="210.0" text="Idle" />
+        <RadioButton fx:id="radiobutton_blog" layoutX="14.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#togglebbopts_ui" selected="true" text="Blog backup">
+            <toggleGroup>
+                <ToggleGroup fx:id="backup_type" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="radiobutton_post" layoutX="13.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#untogglebbopts_ui" text="Single post backup" toggleGroup="$backup_type" />
+      <RadioButton fx:id="fullmode" layoutX="162.0" layoutY="252.0" mnemonicParsing="false" selected="true" text="Full">
+         <toggleGroup>
+            <ToggleGroup fx:id="backup_mode" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="updtmode" layoutX="162.0" layoutY="302.0" mnemonicParsing="false" text="Update" toggleGroup="$backup_mode" />
+      <RadioButton fx:id="checkmode" layoutX="162.0" layoutY="277.0" mnemonicParsing="false" text="Check" toggleGroup="$backup_mode" />
+      <Label layoutX="14.0" layoutY="151.0" text="Consent cookie" />
+      <TextField fx:id="cookie" layoutX="14.0" layoutY="168.0" prefHeight="25.0" prefWidth="210.0" />
+      <TextField fx:id="useragent" layoutX="13.0" layoutY="218.0" prefHeight="25.0" prefWidth="210.0" />
+      <Label layoutX="14.0" layoutY="201.0" text="Up-to-date User-Agent header" />
+    </children>
+</Pane>
